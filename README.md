@@ -1,28 +1,35 @@
-cvs2ical
-========
+# csv2ical
 
-Convert a cvs file with event information to ical, which can be imported into Google Calendar, Microsoft Outlook and etc.
+[![Tests badge](https://github.com/rlan/csv2ical/actions/workflows/tests.yml/badge.svg)](https://github.com/rlan/csv2ical/actions/workflows/tests.yml)
 
+Convert a CSV file with event information to an iCalendar ICS file, which can be imported into Google Calendar, Microsoft Outlook and etc.
 
-# Installation
+Installation:
 
-```pip install -r requirements.txt```
+* Python 3.7, 3.8, 3.9, 3.10, 3.11, 3.12.
 
-# Example
-
-
-`sample.csv` has all-day events. The header row is for human to read and skipped by the code.
+```sh
+pip install -r requirements.txt
 ```
+
+Example:
+
+An all-day event starts at midnight and ends at the midnight of the next day. Although `sample.csv` contains only all-day events, e.g. birthdays, any shorter events, e.g. meetings, would also work. The header row in the CSV file is for human to read and skipped by the code.
+
+```csv
 "Subject","Start Date","End Date","Description","Location"
 "Harry Potter birthday","1980-07-31 00:00","1980-08-01 00:00","The Chosen One","Godric's Hollow"
 "Ron Weasley birthday","1980-03-01 00:00","1980-03-02 00:00","Won-Won","Ottery St Catchpole"
 "Hermione Granger birthday","1979-09-19 00:00","1979-09-20 00:00","'Mione",""
 ```
 
-## Usage
+Usage:
 
+```sh
+python csv2ical.py --help
 ```
-$ python csv2ical.py --help
+
+```txt
 usage: csv2ical.py [-h] input output
 
 positional arguments:
@@ -33,14 +40,15 @@ optional arguments:
   -h, --help  show this help message and exit
 ```
 
-
+```sh
+python csv2ical.py sample.csv sample.ics
 ```
-python cvs2ical.py sample.csv sample.ics
+
+```sh
+cat sample.ics
 ```
 
-
-```
-$ cat sample.ics
+```txt
 BEGIN:VCALENDAR
 VERSION:2.0
 PRODID:-//sample.csv//mxm.dk//
