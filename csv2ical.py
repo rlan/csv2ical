@@ -45,10 +45,12 @@ def csv2ical(input_file: str, output_file: str):
             if n == 0:
                 continue
             summary = row[0]
-            dtstart = datetime.strptime(row[1], "%Y-%m-%d %H:%M")
-            dtend = datetime.strptime(row[2], "%Y-%m-%d %H:%M")
-            description = row[3].strip()
-            location = row[4].strip()
+            start = " ".join([row[1].strip(), row[2].strip()])
+            dtstart = datetime.strptime(start, "%Y-%m-%d %H:%M")
+            end = " ".join([row[3].strip(), row[4].strip()])
+            dtend = datetime.strptime(end, "%Y-%m-%d %H:%M")
+            description = row[5].strip()
+            location = row[6].strip()
 
             event = Event()
             event.add("summary", summary)
@@ -63,7 +65,7 @@ def csv2ical(input_file: str, output_file: str):
             out_f.close()
 
 
-def main(args):
+def main(args: argparse.Namespace):
     csv2ical(args.input, args.output)
 
 

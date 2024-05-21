@@ -2,7 +2,7 @@
 
 [![Tests badge](https://github.com/rlan/csv2ical/actions/workflows/tests.yml/badge.svg)](https://github.com/rlan/csv2ical/actions/workflows/tests.yml)
 
-Convert a CSV file with event information to an iCalendar ICS file, which can be imported into Google Calendar, Microsoft Outlook and etc.
+Converts a CSV file with event information to an iCalendar ICS file, which can be imported into Google Calendar, Microsoft Outlook and etc.
 
 Installation:
 
@@ -14,14 +14,16 @@ pip install -r requirements.txt
 
 Example:
 
-An all-day event starts at midnight and ends at the midnight of the next day. Although `sample.csv` contains only all-day events, e.g. birthdays, any shorter events, e.g. meetings, would also work. The header row in the CSV file is for human to read and skipped by the code.
+[`sample.csv`](sample.csv):
 
 ```csv
-"Subject","Start Date","End Date","Description","Location"
-"Harry Potter birthday","1980-07-31 00:00","1980-08-01 00:00","The Chosen One","Godric's Hollow"
-"Ron Weasley birthday","1980-03-01 00:00","1980-03-02 00:00","Won-Won","Ottery St Catchpole"
-"Hermione Granger birthday","1979-09-19 00:00","1979-09-20 00:00","'Mione",""
+"Subject","Start Date","Start Time","End Date","End Time","Description","Location"
+"Harry Potter birthday","1980-07-31","00:00","1980-08-01","00:00","The Chosen One","Godric's Hollow"
+"Ron Weasley birthday","1980-03-01","00:00","1980-03-02","00:00","Won-Won","Ottery St Catchpole"
+"Hermione Granger birthday","1979-09-19","00:00","1979-09-20","00:00","'Mione",""
 ```
+
+An all-day event starts at midnight and ends at the midnight of the next day. Although `sample.csv` contains only all-day events, e.g. birthdays, any shorter events, e.g. meetings, would also work. The header row in the CSV file is for human to read and skipped by the code.
 
 Usage:
 
@@ -39,6 +41,8 @@ positional arguments:
 optional arguments:
   -h, --help  show this help message and exit
 ```
+
+Reproduce [`sample.ics`](sample.ics):
 
 ```sh
 python csv2ical.py sample.csv sample.ics
@@ -78,4 +82,4 @@ END:VCALENDAR
 
 License:
 
-MIT
+[MIT](LICENSE)
