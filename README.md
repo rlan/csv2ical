@@ -75,3 +75,7 @@ LOCATION:
 END:VEVENT
 END:VCALENDAR
 ```
+
+License:
+
+MIT
