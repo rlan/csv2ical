@@ -2,7 +2,7 @@
 
 [![Tests badge](https://github.com/rlan/csv2ical/actions/workflows/tests.yml/badge.svg)](https://github.com/rlan/csv2ical/actions/workflows/tests.yml)
 
-Converts a CSV file with event information to an iCalendar ICS file, which can be imported into Google Calendar, Microsoft Outlook and etc.
+Convert a CSV file with event details into an iCalendar ([ICS](https://docs.fileformat.com/email/ics/)) file. The ICS file can then be imported into apps like Google Calendar, Outlook, or macOS Calendar.
 
 Installation:
 
@@ -23,7 +23,9 @@ Example:
 "Hermione Granger birthday","1979-09-19","00:00","1979-09-20","00:00","'Mione",""
 ```
 
-An all-day event starts at midnight and ends at the midnight of the next day. Although `sample.csv` contains only all-day events, e.g. birthdays, any shorter events, e.g. meetings, would also work. The header row in the CSV file is for human to read and skipped by the code.
+An all-day event starts at midnight and ends at the midnight of the next day. Although `sample.csv` contains only all-day events, e.g. birthdays, any shorter events, e.g. meetings, would also work.
+
+The names in the CSV header row is documentation. It tells the author of the CSV file which column to write the event details. Editing that row has no effect on the output ICS file, but **do not** omit it.
 
 Usage:
 
