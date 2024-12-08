@@ -1,12 +1,12 @@
 # csv2ical
 
-[![Tests badge](https://github.com/rlan/csv2ical/actions/workflows/tests.yml/badge.svg)](https://github.com/rlan/csv2ical/actions/workflows/tests.yml)
+[![Testing badge](https://github.com/rlan/csv2ical/actions/workflows/tests.yml/badge.svg)](https://github.com/rlan/csv2ical/actions/workflows/tests.yml)
+![Python versions](https://img.shields.io/badge/python-3.7%20%7C%203.8%20%7C%203.9%20%7C%203.10%20%7C%203.11%20%7C%203.12%20%7C%203.13-blue)
+![MIT license](https://img.shields.io/github/license/rlan/csv2ical)
 
 Convert a CSV file with event details into an iCalendar ([ICS](https://docs.fileformat.com/email/ics/)) file. The ICS file can then be imported into apps like Google Calendar, Outlook, or macOS Calendar.
 
 Installation:
-
-* Python 3.7, 3.8, 3.9, 3.10, 3.11, 3.12.
 
 ```sh
 pip install -r requirements.txt
