@@ -1,0 +1,15 @@
+abstract: <p>Convert a CSV file with event details into an iCalendar ICS file. The
+  ICS file can then be imported into apps like Google Calendar, Outlook, or macOS
+  Calendar.</p>
+authors:
+- family-names: Lan
+  given-names: Rick
+  orcid: 0000-0003-2830-2820
+cff-version: 1.2.0
+date-released: '2025-01-23'
+doi: 10.5281/zenodo.15024834
+license:
+- mit
+title: Convert a CSV file with event details into an iCalendar ICS file.
+type: software
+version: '20250123'
