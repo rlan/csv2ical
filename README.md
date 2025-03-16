@@ -105,6 +105,11 @@ END:VCALENDAR
 ```
 
 
+For developers:
+
+Please send pull requests to the [develop](https://github.com/rlan/csv2ical/tree/develop) branch.
+
+
 Citation:
 
 If this project helps your research, don't hesitate to spread the word! Click on the badge below and find citation formats (e.g., BibTeX and etc) at the bottom of that page.
