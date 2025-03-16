@@ -7,6 +7,9 @@
 
 A CLI tool that converts a CSV file with event details into an iCalendar [ICS](https://docs.fileformat.com/email/ics/) file. The ICS file can then be imported into apps like Google Calendar, Microsoft Outlook, Apple macOS Calendar and etc.
 
+Prerequisite:
+
+* [pipx](https://github.com/pypa/pipx) (not pip).
 
 Installation:
 
