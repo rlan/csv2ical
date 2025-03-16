@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 
-import sys
-import csv
-from icalendar import Calendar, Event
-from datetime import datetime
 import argparse
+import csv
+import datetime
+import sys
 
+from icalendar import Calendar, Event
 
 parser = argparse.ArgumentParser(
     description=(
@@ -47,9 +47,9 @@ def csv2ical(input_file: str, output_file: str):
                 continue
             summary = row[0]
             start = " ".join([row[1].strip(), row[2].strip()])
-            dtstart = datetime.strptime(start, "%Y-%m-%d %H:%M")
+            dtstart = datetime.datetime.strptime(start, "%Y-%m-%d %H:%M")
             end = " ".join([row[3].strip(), row[4].strip()])
-            dtend = datetime.strptime(end, "%Y-%m-%d %H:%M")
+            dtend = datetime.datetime.strptime(end, "%Y-%m-%d %H:%M")
             description = row[5].strip()
             location = row[6].strip()
 
