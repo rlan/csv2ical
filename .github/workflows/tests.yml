@@ -28,16 +28,16 @@ jobs:
       uses: actions/setup-python@v5
       with:
         python-version: ${{ matrix.python-version }}
-    - name: Install dependencies
-      run: |
-        poetry install .
     - name: Install the code linting and formatting tool Ruff
       run: |
         pipx install ruff
     - name: Lint with Ruff
       run: |
         ruff check --output-format=github .
+    - name: Install dependencies
+      run: |
+        poetry install
     - name: Test with example.csv
       run: |
-        csv2ical sample.csv test.ics
+        poetry run csv2ical sample.csv test.ics
         diff sample.ics test.ics
