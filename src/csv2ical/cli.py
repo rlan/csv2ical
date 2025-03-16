@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+import sys
 import csv
 from icalendar import Calendar, Event
 from datetime import datetime
@@ -9,7 +10,7 @@ import argparse
 parser = argparse.ArgumentParser(
     description=(
         "Convert a CSV file with event information to an iCalendar ICS file, which"
-        " can be imported into Google Calendar, Microsoft Outlook and etc."
+        " can be imported into Google Calendar, Microsoft Outlook, Apple macOS Calendar and etc."
     )
 )
 parser.add_argument("input", type=str, help="Input CSV file containing calendar events")
@@ -65,9 +66,9 @@ def csv2ical(input_file: str, output_file: str):
             out_f.close()
 
 
-def main(args: argparse.Namespace):
+def main():
     csv2ical(args.input, args.output)
 
 
 if __name__ == "__main__":
-    main(parser.parse_args())
+    sys.exit(main())

@@ -3,14 +3,52 @@
 [![Testing badge](https://github.com/rlan/csv2ical/actions/workflows/tests.yml/badge.svg)](https://github.com/rlan/csv2ical/actions/workflows/tests.yml)
 ![Python versions](https://img.shields.io/badge/python-3.7%20%7C%203.8%20%7C%203.9%20%7C%203.10%20%7C%203.11%20%7C%203.12%20%7C%203.13-blue)
 ![MIT license](https://img.shields.io/github/license/rlan/csv2ical)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15024834.svg)](https://doi.org/10.5281/zenodo.15024834)
 
-Convert a CSV file with event details into an iCalendar ([ICS](https://docs.fileformat.com/email/ics/)) file. The ICS file can then be imported into apps like Google Calendar, Outlook, or macOS Calendar.
+A CLI tool that converts a CSV file with event details into an iCalendar [ICS](https://docs.fileformat.com/email/ics/) file. The ICS file can then be imported into apps like Google Calendar, Microsoft Outlook, Apple macOS Calendar and etc.
+
+Prerequisite:
+
+* [pipx](https://github.com/pypa/pipx) (not pip).
 
 Installation:
 
 ```sh
-pip install -r requirements.txt
+pipx install git+https://github.com/rlan/csv2ical
 ```
+
+
+Update, if already installed:
+
+```sh
+pipx upgrade csv2ical
+```
+
+
+Uninstall:
+
+```sh
+pipx uninstall csv2ical
+```
+
+
+Usage:
+
+```sh
+csv2ical --help
+```
+
+```txt
+usage: csv2ical [-h] input output
+
+positional arguments:
+  input       Input csv file containing calendar events
+  output      Output ics file
+
+optional arguments:
+  -h, --help  show this help message and exit
+```
+
 
 Example:
 
@@ -27,27 +65,11 @@ An all-day event starts at midnight and ends at the midnight of the next day. Al
 
 The names in the CSV header row is documentation. It tells the author of the CSV file which column to write the event details. Editing that row has no effect on the output ICS file, but **do not** omit it.
 
-Usage:
-
-```sh
-python csv2ical.py --help
-```
-
-```txt
-usage: csv2ical.py [-h] input output
-
-positional arguments:
-  input       Input csv file containing calendar events
-  output      Output ics file
-
-optional arguments:
-  -h, --help  show this help message and exit
-```
 
 Reproduce [`sample.ics`](sample.ics):
 
 ```sh
-python csv2ical.py sample.csv sample.ics
+csv2ical sample.csv sample.ics
 ```
 
 ```sh
@@ -81,6 +103,11 @@ LOCATION:
 END:VEVENT
 END:VCALENDAR
 ```
+
+
+For developers:
+
+Please send pull requests to the [develop](https://github.com/rlan/csv2ical/tree/develop) branch.
 
 
 Citation:

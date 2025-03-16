@@ -1,0 +1,46 @@
+[project]
+name = "csv2ical"
+description = "A CLI tool that converts a CSV file with event details into an iCalendar ICS file. The ICS file can then be imported into apps like Google Calendar, Outlook, macOS Calendar and etc."
+authors = [{ name = "Rick Lan", email = "rlan@users.noreply.github.com" }]
+license = { text = "MIT" }
+readme = "README.md"
+packages = [{include = "csv2ical", from = "src"}]
+requires-python = ">=3.7"
+dependencies = [
+    "icalendar>=4.0.1",
+]
+dynamic = [ "version" ]
+
+[project.scripts]
+csv2ical = "csv2ical.cli:main"
+
+[project.urls]
+homepage = "https://github.com/rlan/csv2ical"
+repository = "https://github.com/rlan/csv2ical"
+documentation = "https://github.com/rlan/csv2ical"
+"Bug Tracker" = "https://github.com/rlan/csv2ical/issues"
+
+[tool.poetry]
+version = "1.0.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff.lint]
+# 1. Enable flake8-bugbear (`B`) rules, in addition to the defaults.
+select = ["E4", "E7", "E9", "F", "B"]
+
+# 2. Avoid enforcing line-length violations (`E501`)
+ignore = ["E501"]
+
+# 3. Avoid trying to fix flake8-bugbear (`B`) violations.
+unfixable = ["B"]
+
+# 4. Ignore `E402` (import violations) in all `__init__.py` files, and in select subdirectories.
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = ["E402"]
+"**/{tests,docs,tools}/*" = ["E402"]
+
+[tool.ruff.format]
+docstring-code-format = true
