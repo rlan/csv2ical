@@ -41,7 +41,6 @@ csv2ical --help
 ```
 
 ```txt
-csv2ical --help
 Usage: csv2ical [OPTIONS] CSV_NAME ICS_NAME
 
   Converts a CSV file with event information to an iCalendar ICS file, which
