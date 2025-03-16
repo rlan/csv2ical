@@ -6,6 +6,7 @@ license = "MIT"
 readme = "README.md"
 requires-python = ">=3.8"
 dependencies = [
+    "click",
     "icalendar>=4.0.1",
 ]
 dynamic = [ "version" ]

@@ -40,14 +40,20 @@ csv2ical --help
 ```
 
 ```txt
-usage: csv2ical [-h] input output
+csv2ical --help
+Usage: csv2ical [OPTIONS] CSV_NAME ICS_NAME
 
-positional arguments:
-  input       Input csv file containing calendar events
-  output      Output ics file
+  Converts a CSV file with event information to an iCalendar ICS file, which
+  can be imported into Google Calendar, Microsoft Outlook, macOS calendar and
+  etc.
 
-optional arguments:
-  -h, --help  show this help message and exit
+  CSV_NAME is the file name of a CSV file with event information.
+
+  ICS_NAME is the resulting iCalendar ICS file.
+
+Options:
+  --version  Show the version and exit.
+  --help     Show this message and exit.
 ```
 
 

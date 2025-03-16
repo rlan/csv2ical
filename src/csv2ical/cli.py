@@ -1,44 +1,30 @@
-#!/usr/bin/env python
-
-import argparse
 import csv
 import datetime
-import sys
 
+import click
 from icalendar import Calendar, Event
 
-parser = argparse.ArgumentParser(
-    description=(
-        "Convert a CSV file with event information to an iCalendar ICS file, which"
-        " can be imported into Google Calendar, Microsoft Outlook, Apple macOS Calendar and etc."
-    )
-)
-parser.add_argument("input", type=str, help="Input CSV file containing calendar events")
-parser.add_argument("output", type=str, help="Output iCalendar ICS file")
-args = parser.parse_args()
 
-
-def csv2ical(input_file: str, output_file: str):
+@click.command()
+@click.argument("csv_name", type=click.Path(exists=True))
+@click.argument("ics_name", type=click.Path())
+@click.version_option()
+def main(csv_name: str, ics_name: str):
     """
-    Convert a CSV file with event information to an iCalendar ICS file, which
-    can be imported into Google Calendar, Microsoft Outlook and etc.
+    Converts a CSV file with event information to an iCalendar ICS file, which
+    can be imported into Google Calendar, Microsoft Outlook, macOS calendar and etc.
 
-    Parameters
-    ----------
-    input_file : str
-    output_file : str
+    CSV_NAME is the file name of a CSV file with event information.
 
-    Returns
-    -------
-    Empty
+    ICS_NAME is the resulting iCalendar ICS file.
     """
 
-    with open(input_file) as csv_file:
+    with open(csv_name) as csv_file:
         reader = csv.reader(csv_file)
 
         # required to be compliant:
         cal = Calendar()
-        cal.add("prodid", "-//" + input_file + "//mxm.dk//")
+        cal.add("prodid", "-//" + csv_name + "//mxm.dk//")
         cal.add("version", "2.0")
 
         for n, row in enumerate(reader):
@@ -61,14 +47,7 @@ def csv2ical(input_file: str, output_file: str):
             event.add("location", location)
             cal.add_component(event)
 
-        with open(output_file, "wb") as out_f:
-            out_f.write(cal.to_ical())
-            out_f.close()
-
-
-def main():
-    csv2ical(args.input, args.output)
-
-
-if __name__ == "__main__":
-    sys.exit(main())
+        with open(ics_name, "wb") as ics_file:
+            ics_file.write(cal.to_ical())
+            ics_file.close()
+            return 0
