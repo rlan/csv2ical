@@ -4,6 +4,7 @@
 ![Python versions](https://img.shields.io/badge/python-3.8%20%7C%203.9%20%7C%203.10%20%7C%203.11%20%7C%203.12%20%7C%203.13-blue)
 ![MIT license](https://img.shields.io/github/license/rlan/csv2ical)
 [![Hatch project](https://img.shields.io/badge/%F0%9F%A5%9A-Hatch-4051b5.svg)](https://github.com/pypa/hatch)
+[![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15024834.svg)](https://doi.org/10.5281/zenodo.15024834)
 
 A CLI tool that converts a CSV file with event details into an iCalendar [ICS](https://docs.fileformat.com/email/ics/) file. The ICS file can then be imported into apps like Google Calendar, Microsoft Outlook, Apple macOS Calendar and etc.
@@ -114,7 +115,7 @@ END:VCALENDAR
 
 For developers:
 
-* Install [hatch](https://github.com/pypa/hatch).
+* Install [hatch](https://github.com/pypa/hatch) and [ruff](https://github.com/astral-sh/ruff).
   * Lint: `hatch fmt`
   * Test: `hatch test --all`
   * Versioning: `hatch version`
