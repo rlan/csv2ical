@@ -121,41 +121,7 @@ uv tool uninstall csv2ical
 
 ## Development
 
-Development is on the `develop` branch. Please send PR there.
-
-How to set up the development environment:
-
-- Install [uv](https://github.com/astral-sh/uv).
-- Clone this repo.
-- Install project:
-
-```sh
-cd csv2ical
-git checkout develop
-uv sync --locked --all-extras
-```
-
-- Edit code.
-
-- Update install:
-
-```sh
-uv sync
-```
-
-- Run test:
-
-```sh
-uv run csv2ical sample.csv test.ics
-diff sample.ics test.ics
-```
-
-- Run ruff:
-
-```sh
-uvx ruff check
-uvx ruff format
-```
+See [development.md](development.md)
 
 ## Citation
 
