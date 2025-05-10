@@ -2,38 +2,35 @@
 
 [![Testing badge](https://github.com/rlan/csv2ical/actions/workflows/tests.yml/badge.svg)](https://github.com/rlan/csv2ical/actions/workflows/tests.yml)
 ![Python versions](https://img.shields.io/badge/python-3.8%20%7C%203.9%20%7C%203.10%20%7C%203.11%20%7C%203.12%20%7C%203.13-blue)
+[![uv](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/uv/main/assets/badge/v0.json)](https://github.com/astral-sh/uv)
+[![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 ![MIT license](https://img.shields.io/github/license/rlan/csv2ical)
-[![Hatch project](https://img.shields.io/badge/%F0%9F%A5%9A-Hatch-4051b5.svg)](https://github.com/pypa/hatch)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15024834.svg)](https://doi.org/10.5281/zenodo.15024834)
 
 A CLI tool that converts a CSV file with event details into an iCalendar [ICS](https://docs.fileformat.com/email/ics/) file. The ICS file can then be imported into apps like Google Calendar, Microsoft Outlook, Apple macOS Calendar and etc.
 
-Prerequisite:
+## Installation
 
-* [pipx](https://github.com/pypa/pipx) (not pip).
+First, install [uv](https://github.com/astral-sh/uv).
 
-Installation:
-
-```sh
-pipx install git+https://github.com/rlan/csv2ical
-```
-
-
-Update, if already installed:
+Then:
 
 ```sh
-pipx upgrade csv2ical
+uv tool install git+https://github.com/rlan/csv2ical
 ```
 
-
-Uninstall:
+Verify installation:
 
 ```sh
-pipx uninstall csv2ical
+uv tool list
 ```
 
+```txt
+csv2ical v1.0.1
+- csv2ical
+```
 
-Usage:
+## Usage
 
 ```sh
 csv2ical --help
@@ -111,22 +108,62 @@ END:VEVENT
 END:VCALENDAR
 ```
 
+## Update to a new version
 
-For developers:
+```sh
+uv tool upgrade csv2ical
+```
 
-* Install [hatch](https://github.com/pypa/hatch).
-  * Lint: `hatch fmt`
-  * Test: `hatch test --all`
-  * Versioning: `hatch version`
+## Uninstallation
 
+```sh
+uv tool uninstall csv2ical
+```
 
-Citation:
+## Development
+
+Development is on the `develop` branch. Please send PR there.
+
+How to set up the development environment:
+
+- Install [uv](https://github.com/astral-sh/uv).
+- Clone this repo.
+- Install project:
+
+```sh
+cd csv2ical
+git checkout develop
+uv sync --locked --all-extras
+```
+
+- Edit code.
+
+- Update install:
+
+```sh
+uv sync
+```
+
+- Run test:
+
+```sh
+uv run csv2ical sample.csv test.ics
+diff sample.ics test.ics
+```
+
+- Run ruff:
+
+```sh
+uvx ruff check
+uvx ruff format
+```
+
+## Citation
 
 If this project helps your research, don't hesitate to spread the word! Click on the badge below and find citation formats (e.g., BibTeX and etc) at the bottom of that page.
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15024834.svg)](https://doi.org/10.5281/zenodo.15024834)
 
-
-License:
+## License
 
 [MIT](LICENSE)

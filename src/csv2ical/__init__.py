@@ -1,1 +1,3 @@
-from .__version__ import __version__  # noqa
+from importlib.metadata import version
+
+__version__ = version("csv2ical")
