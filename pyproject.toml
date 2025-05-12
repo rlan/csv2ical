@@ -13,6 +13,8 @@ dependencies = [
 
 [dependency-groups]
 dev = [
+]
+lint = [
     "basedpyright>=1.29.1",
     "codespell>=2.4.1",
     "ruff>=0.11.9",
@@ -69,18 +71,22 @@ reportUnreachable = false
 # reportUnknownArgumentType = false
 
 [tool.codespell]
+# Ref: https://github.com/jlevy/simple-modern-uv/blob/06b288a9c1d032c7d6d0e4ed88c8515397529434/template/pyproject.toml.jinja
 # Add here as needed:
 # ignore-words-list = "foo,bar"
 # skip = "foo.py,bar.py"
 
 [tool.ruff]
+# Ref: https://github.com/jlevy/simple-modern-uv/blob/06b288a9c1d032c7d6d0e4ed88c8515397529434/template/pyproject.toml.jinja
 # Set as desired, typically 88 (black standard) or 100 (wide).
 line-length = 88
 
 [tool.ruff.lint]
+# Ref: https://github.com/jlevy/simple-modern-uv/blob/06b288a9c1d032c7d6d0e4ed88c8515397529434/template/pyproject.toml.jinja
 select = [
     # See: https://docs.astral.sh/ruff/rules/
     # Basic list from: https://docs.astral.sh/ruff/linter/#rule-selection
+    "D", # https://docs.astral.sh/ruff/faq/#does-ruff-support-numpy-or-google-style-docstrings
     "E", # https://docs.astral.sh/ruff/rules/#error-e
     "F", # https://docs.astral.sh/ruff/rules/#pyflakes-f
     "UP", # https://docs.astral.sh/ruff/rules/#pyupgrade-up
@@ -115,5 +121,8 @@ ignore = [
     "ISC002", # https://docs.astral.sh/ruff/rules/multi-line-implicit-string-concatenation/
 ]
 
+[tool.ruff.lint.pydocstyle]
+convention = "numpy" # https://docs.astral.sh/ruff/faq/#does-ruff-support-numpy-or-google-style-docstrings
+
 [tool.ruff.format]
-docstring-code-format = true
+docstring-code-format = true # https://docs.astral.sh/ruff/formatter/#docstring-formatting

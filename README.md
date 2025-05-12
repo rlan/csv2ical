@@ -1,10 +1,10 @@
 # csv2ical
 
-[![Testing badge](https://github.com/rlan/csv2ical/actions/workflows/tests.yml/badge.svg)](https://github.com/rlan/csv2ical/actions/workflows/tests.yml)
 ![Python versions](https://img.shields.io/badge/python-3.8%20%7C%203.9%20%7C%203.10%20%7C%203.11%20%7C%203.12%20%7C%203.13-blue)
+![MIT license](https://img.shields.io/github/license/rlan/csv2ical)
 [![uv](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/uv/main/assets/badge/v0.json)](https://github.com/astral-sh/uv)
 [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
-![MIT license](https://img.shields.io/github/license/rlan/csv2ical)
+[![CI badge](https://github.com/rlan/csv2ical/actions/workflows/ci.yml/badge.svg)](https://github.com/rlan/csv2ical/actions)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15024834.svg)](https://doi.org/10.5281/zenodo.15024834)
 
 A CLI tool that converts a CSV file with event details into an iCalendar [ICS](https://docs.fileformat.com/email/ics/) file. The ICS file can then be imported into apps like Google Calendar, Microsoft Outlook, Apple macOS Calendar and etc.
@@ -39,11 +39,13 @@ csv2ical --help
 ```txt
 Usage: csv2ical [OPTIONS] CSV_NAME ICS_NAME
 
-  Converts a CSV file with event information to an iCalendar ICS file, which
-  can be imported into Google Calendar, Microsoft Outlook, macOS calendar and
-  etc.
+  Convert a CSV file to an ICS file.
 
-  CSV_NAME is the file name of a CSV file with event information.
+  Convert a CSV file with event details to an iCalendar ICS file, which can be
+  imported into apps like Google Calendar, Microsoft Outlook, Apple macOS
+  Calendar and etc.
+
+  CSV_NAME is the file name of a CSV file with event details.
 
   ICS_NAME is the resulting iCalendar ICS file.
 

@@ -1,3 +1,9 @@
+#!/usr/bin/env python3
+"""CLI for csv2ical.
+
+This module creates a CLI app and validates arguments.
+"""
+
 import csv
 import datetime
 
@@ -10,15 +16,16 @@ from icalendar import Calendar, Event
 @click.argument("ics_name", type=click.Path())
 @click.version_option()
 def main(csv_name: str, ics_name: str):
-    """
-    Converts a CSV file with event information to an iCalendar ICS file, which
-    can be imported into Google Calendar, Microsoft Outlook, macOS calendar and etc.
+    """Convert a CSV file to an ICS file.
 
-    CSV_NAME is the file name of a CSV file with event information.
+    Convert a CSV file with event details to an iCalendar ICS file,
+    which can be imported into apps like Google Calendar, Microsoft
+    Outlook, Apple macOS Calendar and etc.
+
+    CSV_NAME is the file name of a CSV file with event details.
 
     ICS_NAME is the resulting iCalendar ICS file.
     """
-
     with open(csv_name) as csv_file:
         reader = csv.reader(csv_file)
 
