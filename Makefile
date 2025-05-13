@@ -9,16 +9,16 @@
 default: install lint test
 
 install:
-	uv sync --all-extras --group lint
+	uv sync --locked --group lint
 
 lint:
-	-codespell ./src
-	-ruff check ./src
-	-ruff format ./src
-	-basedpyright ./src
+	-uv run codespell ./src
+	-uv run ruff check ./src
+	-uv run ruff format ./src
+	-uv run basedpyright ./src
 
 test:
-	-csv2ical sample.csv test.ics
+	-uv run csv2ical sample.csv test.ics
 	-diff sample.ics test.ics
 
 upgrade:

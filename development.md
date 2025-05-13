@@ -30,3 +30,11 @@ make clean
 # Upgrade dependencies to compatible versions:
 make upgrade
 ```
+
+To test with a specific version of Python, use the `UV_PYTHON` environment variable. For example,
+
+```sh
+UV_PYTHON=3.8 make
+```
+
+will use Python 3.8.
