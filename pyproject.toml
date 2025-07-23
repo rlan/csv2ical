@@ -1,11 +1,11 @@
 [project]
 name = "csv2ical"
-description = "A CLI tool that converts a CSV file with event details into an iCalendar ICS file. The ICS file can then be imported into apps like Google Calendar, Outlook, macOS Calendar and etc."
+description = "A CLI tool that converts a CSV file with event details into an iCalendar ICS file. The ICS file can then be imported into apps like Google Calendar, Outlook, Apple Calendar and etc."
 authors = [{ name = "Rick Lan" }]
 license = "MIT"
 readme = "README.md"
 requires-python = ">=3.8,<4.0"
-version = "1.0.1"
+version = "1.0.2"
 dependencies = [
     "click",
     "icalendar>=4.0.1",

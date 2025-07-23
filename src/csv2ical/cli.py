@@ -20,7 +20,7 @@ def main(csv_name: str, ics_name: str):
 
     Convert a CSV file with event details to an iCalendar ICS file,
     which can be imported into apps like Google Calendar, Microsoft
-    Outlook, Apple macOS Calendar and etc.
+    Outlook, Apple Calendar and etc.
 
     CSV_NAME is the file name of a CSV file with event details.
 

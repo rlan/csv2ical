@@ -7,7 +7,7 @@
 [![CI badge](https://github.com/rlan/csv2ical/actions/workflows/ci.yml/badge.svg)](https://github.com/rlan/csv2ical/actions)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15024834.svg)](https://doi.org/10.5281/zenodo.15024834)
 
-A CLI tool that converts a CSV file with event details into an iCalendar [ICS](https://docs.fileformat.com/email/ics/) file. The ICS file can then be imported into apps like Google Calendar, Microsoft Outlook, Apple macOS Calendar and etc.
+A CLI tool that converts a CSV file with event details into an iCalendar [ICS](https://docs.fileformat.com/email/ics/) file. The ICS file can then be imported into apps like Google Calendar, Microsoft Outlook, Apple Calendar and etc.
 
 ## Installation
 
@@ -42,8 +42,8 @@ Usage: csv2ical [OPTIONS] CSV_NAME ICS_NAME
   Convert a CSV file to an ICS file.
 
   Convert a CSV file with event details to an iCalendar ICS file, which can be
-  imported into apps like Google Calendar, Microsoft Outlook, Apple macOS
-  Calendar and etc.
+  imported into apps like Google Calendar, Microsoft Outlook, Apple Calendar
+  and etc.
 
   CSV_NAME is the file name of a CSV file with event details.
 
