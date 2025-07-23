@@ -31,10 +31,10 @@ make clean
 make upgrade
 ```
 
-To test with a specific version of Python, use the `UV_PYTHON` environment variable. For example,
+To test with a specific version of Python, use the [`UV_PYTHON`](https://docs.astral.sh/uv/configuration/environment/#uv_python) environment variable. For example,
 
 ```sh
 UV_PYTHON=3.8 make
 ```
 
-will use Python 3.8.
+will install and use Python 3.8.
